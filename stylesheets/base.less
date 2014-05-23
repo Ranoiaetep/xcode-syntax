@@ -26,12 +26,8 @@
     color: @syntax-gutter-text-color;
 
     .line-number {
+      &.cursor-line-no-selection,
       &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
-      }
-
-      &.cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
       }
     }
@@ -54,19 +50,52 @@
   .selection .region {
     background-color: @syntax-selection-color;
   }
+
+  &.is-focused {
+    .cursor {
+      border-color: @syntax-cursor-color;
+    }
+
+    .selection .region {
+      background-color: @syntax-selection-color;
+    }
+
+    .line-number.cursor-line-no-selection {
+      background-color: @syntax-gutter-background-color;
+    }
+    .line.cursor-line {
+      background-color: lighten(@selectedTextBackgroundColor, 10%);
+    }
+  }
+}
+
+.active {
+  .editor {
+    &.is-focused {
+      .line.cursor-line {
+        border-top: 1px solid @selectedTextBackgroundColor;
+        border-bottom: 1px solid @selectedTextBackgroundColor;
+      }
+    }
+  }
+}
+
+.editor.mini .scroll-view {
+  padding-left: 1px;
 }
 
 .editor .search-results .marker .region {
-  background-color: transparent;
-  border: 1px solid @syntax-result-marker-color;
-}
-
-.editor .search-results .marker.current-result .region {
+  background-color: @syntax-result-marker-color;
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
+.editor .search-results .marker.current-result .region {
+  background-color: @syntax-result-marker-color-selected;
+  border: 1px solid @syntax-result-marker-color;
+}
+
 .comment {
-  color: @light-gray;
+  color: @xcodeComments;
 }
 
 .entity {
@@ -81,7 +110,7 @@
 }
 
 .keyword {
-  color: @purple;
+  color: @xcodeKeywords;
 
   &.control {
     color: @purple;
@@ -105,14 +134,14 @@
 }
 
 .constant {
-  color: @orange;
+  color: @xcodeProjectFunctionAndMethodNames;
 
   &.character.escape {
     color: @cyan;
   }
 
   &.numeric {
-    color: @orange;
+    color: @xcodeCharacters;
   }
 
   &.other.color {
@@ -125,7 +154,7 @@
 }
 
 .variable {
-  color: @red;
+  color: @xcodeProjectClassNames;
 
   &.interpolation {
     color: darken(@red, 10%);
@@ -142,7 +171,7 @@
 }
 
 .string {
-  color: @green;
+  color: @xcodeStrings;
 
 
   &.regexp {
@@ -209,11 +238,11 @@
 
 .entity {
   &.name.function {
-    color: @blue;
+    color: @xcodeProjectFunctionAndMethodNames;
   }
 
   &.name.class, &.name.type.class {
-    color: @light-orange;
+    color: @xcodeProjectClassNames;
   }
 
   &.name.section {
@@ -226,10 +255,10 @@
   }
 
   &.other.attribute-name {
-    color: @orange;
+    color: @xcodeAttributes;
 
     &.id {
-      color: @blue;
+      color: @xcodeProjectFunctionAndMethodNames;
     }
   }
 }
@@ -240,7 +269,7 @@
   }
 
   &.link {
-    color: @orange;
+    color: @xcodeURLs;
   }
 
   &.require {
@@ -306,8 +335,4 @@
   &.heading {
     color: @green;
   }
-}
-
-.editor.mini .scroll-view {
-  padding-left: 1px;
 }

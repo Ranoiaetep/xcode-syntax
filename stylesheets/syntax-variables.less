@@ -4,28 +4,25 @@
 // include a syntax-variables.less file.
 
 // General colors
-//@syntax-text-color: @very-light-gray;
 @syntax-text-color: @textColor;
 @syntax-cursor-color: @textColor;
-@syntax-selection-color: lighten(@dark-gray, 10%);
+@syntax-selection-color: lighten(@selectedTextBackgroundColor, 10%);
 @syntax-background-color: @textBackgroundColor;
 
 // Guide colors
-@syntax-wrap-guide-color: @dark-gray;
-@syntax-indent-guide-color: @gray;
-@syntax-invisible-character-color: @gray;
+@syntax-wrap-guide-color: @windowBackgroundColor;
+@syntax-indent-guide-color: @gridColor;
+@syntax-invisible-character-color: @xcodeInvisibles;
 
 // For find and replace markers
-@syntax-result-marker-color: @light-gray;
-@syntax-result-marker-color-selected: white;
+@syntax-result-marker-color: @findBackgroundColor;
+@syntax-result-marker-color-selected: @findSelectedBackgroundColor;
 
 // Gutter colors
-//@syntax-gutter-text-color: @very-light-gray;
-@syntax-gutter-text-color: @syntax-text-color;
+@syntax-gutter-text-color: @gutterTextColor;
 @syntax-gutter-text-color-selected: @syntax-gutter-text-color;
-//@syntax-gutter-background-color: @dark-gray;
-@syntax-gutter-background-color: #f7f7f7;
-@syntax-gutter-background-color-selected: @gray;
+@syntax-gutter-background-color: @gutterBackgroundColor;
+@syntax-gutter-background-color-selected: @gutterSelectedBackgroundColor;
 
 // For git diff info. i.e. in the gutter
 @syntax-color-renamed: @blue;
