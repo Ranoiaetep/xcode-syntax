@@ -1,5 +1,25 @@
 @import "syntax-variables";
 
+@-webkit-keyframes flash {
+    0% {
+        background-color: @findBackgroundColor;
+        opacity: 1;
+        font-weight: bold;
+        -webkit-transform: scale(1.5, 1.5);
+    }
+    100% {
+        background-color: @findSelectedBackgroundColor;
+        opacity: 0.7;
+    }
+}
+
+.demo {
+    -webkit-animation-name: demo;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
 .editor-colors {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
@@ -26,6 +46,8 @@
     color: @syntax-gutter-text-color;
 
     .line-number {
+      color: @syntax-gutter-text-color;
+
       &.cursor-line-no-selection,
       &.cursor-line {
         color: @syntax-gutter-text-color-selected;
@@ -36,7 +58,7 @@
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @light-gray;
+    color: @gutterFoldMarkerColor;
   }
 
   .invisible {
@@ -75,6 +97,7 @@
       .line.cursor-line {
         border-top: 1px solid @selectedTextBackgroundColor;
         border-bottom: 1px solid @selectedTextBackgroundColor;
+        margin: -1px 0;
       }
     }
   }
@@ -87,11 +110,13 @@
 .editor .search-results .marker .region {
   background-color: @syntax-result-marker-color;
   border: 1px solid @syntax-result-marker-color-selected;
+  margin: -1px 0;
 }
 
 .editor .search-results .marker.current-result .region {
   background-color: @syntax-result-marker-color-selected;
   border: 1px solid @syntax-result-marker-color;
+  margin: -1px 0;
 }
 
 .comment {
@@ -335,4 +360,13 @@
   &.heading {
     color: @green;
   }
+}
+
+.bracket-matcher {
+  background-color: @findSelectedBackgroundColor;
+  border: none;
+  -webkit-animation-name: flash;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
 }
