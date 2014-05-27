@@ -1,5 +1,5 @@
 # xcode-syntax theme
 
-Atom syntax theme based on Xcode.
+Atom syntax theme inspired by Xcode.
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+![Xcode Syntax Preview](https://raw.github.com/ascarter/xcode-syntax/master/xcode-syntax-preview.png)
