@@ -125,12 +125,11 @@
 
 .entity {
   &.name.type {
-    color: @light-orange;
-    text-decoration: underline;
+    color: @xcodeProjectClassNames;
   }
 
   &.other.inherited-class {
-    color: @green;
+    color: @xcodeOtherClassNames;
   }
 }
 
@@ -138,7 +137,7 @@
   color: @xcodeKeywords;
 
   &.control {
-    color: @purple;
+    color: @xcodeKeywords;
   }
 
   &.operator {
@@ -146,23 +145,23 @@
   }
 
   &.other.special-method {
-    color: @blue;
+    color: @xcodeOtherFunctionAndMethodNames;
   }
 
   &.other.unit {
-    color: @orange;
+    color: @xcodeKeywords;
   }
 }
 
 .storage {
-  color: @purple;
+  color: @xcodeProjectClassNames;
 }
 
 .constant {
   color: @xcodeProjectFunctionAndMethodNames;
 
   &.character.escape {
-    color: @cyan;
+    color: @xcodeStrings;
   }
 
   &.numeric {
@@ -170,11 +169,11 @@
   }
 
   &.other.color {
-    color: @cyan;
+    color: @xcodeCharacters;
   }
 
   &.other.symbol {
-    color: @green;
+    color: @xcodeProjectFunctionAndMethodNames;
   }
 }
 
@@ -182,7 +181,7 @@
   color: @xcodeProjectClassNames;
 
   &.interpolation {
-    color: darken(@red, 10%);
+    color: darken(@xcodeProjectClassNames, 10%);
   }
 
   &.parameter.function {
@@ -200,22 +199,22 @@
 
 
   &.regexp {
-    color: @cyan;
+    color: @xcodePreprocessorStatements;
 
     .source.ruby.embedded {
-      color: @orange;
+      color: @xcodePreprocessorStatements;
     }
   }
 
   &.other.link {
-    color: @red;
+    color: @xcodeURLs;
   }
 }
 
 .punctuation {
   &.definition {
     &.comment {
-      color: @light-gray;
+      color: @xcodeComments;
     }
 
     &.string,
@@ -227,22 +226,22 @@
 
     &.heading,
     &.identity {
-      color: @blue;
+      color: @xcodeComments;
     }
 
     &.bold {
-      color: @light-orange;
+      color: @xcodeComments;
       font-style: bold;
     }
 
     &.italic {
-      color: @purple;
+      color: @xcodeComments;
       font-style: italic;
     }
   }
 
   &.section.embedded {
-    color: darken(@red, 10%);
+    color: darken(@xcodeComments, 10%);
   }
 
 }
